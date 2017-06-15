@@ -16,9 +16,8 @@ module.exports = {
   inputs: {
    connectionUrl: {
       description: 'The MySql connection URL',
-      defaultsTo: 'mysql://open:st0rageadmin@localhost:3306/openweb',
       example: 'mysql://foo:bar@localhost:3306/machinepack_mysql',
-      required: false
+      required: true
     },
 
     table: {
@@ -82,11 +81,12 @@ module.exports = {
           if(err) {
             return exits.error(err);
           }
-
+          var size;
           results.forEach(function(res){
             if(res.table == inputs.table)
-              return exits.success(res.size);
+              size = res.size;
           })
+          if(size) return exits.success(size);
           return exits.error("Could not find database: "+options.database)
         });
       });
