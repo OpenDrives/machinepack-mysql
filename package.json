@@ -15,8 +15,9 @@
   "dependencies": {
     "async": "^0.9.0",
     "machine": "^10.3.1",
-    "mysql": "^2.5.5",
-    "waterline-sequel": "^0.2.0"
+    "mysql": "2.13.0",
+    "url": "^0.11.0",
+    "waterline-sequel": "^0.6.4"
   },
   "devDependencies": {
     "test-machinepack-mocha": "^2.1.1"
@@ -28,7 +29,10 @@
       "list-tables",
       "describe-table",
       "list-records",
-      "count-records"
+      "count-records",
+      "db-size",
+      "parse-url",
+      "table-size"
     ],
     "testsUrl": "https://travis-ci.org/particlebanana/machinepack-mysql"
   },
